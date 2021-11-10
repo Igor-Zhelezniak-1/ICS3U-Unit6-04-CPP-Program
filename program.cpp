@@ -1,24 +1,26 @@
-// Copyright (c) 2019 St. Mother Teresa HS All rights reserved.
+// Copyright (c) 2021 Igor All rights reserved
 //
-// Created by: Mr. Coxall
-// Created on: Dec 2019
+// Created by: Igor
+// Created on: Nov 2021
 // This program uses a 2D array
 
 #include <iostream>
 #include <random>
 
 template <int rows, int cols>
-int averageOfNumbers(int (&passedIn2DList)[rows][cols]) {
+float averageOfNumbers(int (&passedIn2DList)[rows][cols]) {
     // this function adds up all the elements in  a 2D array
 
-    int average = 0;
-    int total = 0;
+    float average = 0;
+    float total = 0;
+    int numberOfNumbers = 0;
 
     for (size_t counter1 = 0; counter1 < rows; ++counter1) {
         for (size_t counter2 = 0; counter2 < cols; ++counter2)
             total =  total + passedIn2DList[counter1][counter2];
     }
-    average = total / 4;
+    numberOfNumbers = rows * cols;
+    average = total / numberOfNumbers;
 
     return average;
 }
@@ -27,10 +29,10 @@ int main() {
     // this function uses a 2D array
 
     int randomNumber;
-    const int rows = 2;
-    const int columns = 2;
+    const int rows = 3;
+    const int columns = 3;
     int listD2[rows][columns];
-    int average;
+    float average;
 
     std::cout << "Starting..." << std::endl;
 
