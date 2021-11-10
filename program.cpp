@@ -33,6 +33,9 @@ int main() {
     const int columns = 3;
     int listD2[rows][columns];
     float average;
+    std::random_device rseed;
+    std::mt19937 rgen(rseed());  // mersenne_twister
+    std::uniform_int_distribution<int> idist(0, 10);  // [0,10]
 
     std::cout << "Starting..." << std::endl;
 
@@ -40,9 +43,6 @@ int main() {
 
     for (int counter1 = 0; counter1 < rows; counter1++) {
         for (int counter2 = 0; counter2 < columns; counter2++) {
-            std::random_device rseed;
-            std::mt19937 rgen(rseed());  // mersenne_twister
-            std::uniform_int_distribution<int> idist(0, 10);  // [0,10]
             randomNumber = idist(rgen);
             listD2[counter1][counter2] = randomNumber;
             std::cout << randomNumber << " ";
